@@ -1,34 +1,33 @@
 <template>
   <div class="home-page">
     <section class="intro">
-      <h1>Get the latest tech news</h1>
+      <h1>Get the latest tech news!</h1>
     </section>
     <section class="featured-posts">
-      <post-preview
+      <PostPreview
         id="1"
-        thumbnail="https://wallpaperaccess.com/full/210901.jpg"
-        title="Tech 1"
-        preview-text="Hi, this is  my first post"
-      />
-      <post-preview
+        thumbnail="https://wallpaperaccess.com/full/314785.jpg"
+        title="Hello there!"
+        previewText="This my first post!" />
+      <PostPreview
         id="2"
         thumbnail="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1540505787000/photosp/a8ced7e9-1d01-46c1-b0f8-f716d88074ca/stock-photo-technology-screen-background-computer-data-code-programming-coding-software-a8ced7e9-1d01-46c1-b0f8-f716d88074ca.jpg"
-        title="Tech 2"
-        preview-text="Hi, this is  my second post"
-      />
+        title="Hello there - the second time!"
+        previewText="This my second post!" />
     </section>
   </div>
 </template>
 
 <script>
-  import PostPreview from '@/components/PostPreview.vue';
+import PostPreview from '@/components/Posts/PostPreview'
 
 export default {
-  comments: {
-    PostPreview,
+  components: {
+    PostPreview
   }
 }
 </script>
+
 
 <style scoped>
 .intro {
@@ -36,7 +35,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url("~assets/images/6.1 main-page-background.jpg");
+  background-image: url('~assets/images/6.1 main-page-background.jpg');
   background-position: center;
   background-size: cover;
 }

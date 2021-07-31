@@ -18,18 +18,33 @@ export default {
     PostList,
     PostPreview
   },
-  data() {
-    return {
-      loadedPosts: [
-        {
-          id: '1',
-          title: 'tech',
-          thumbnail: 'https://png.pngtree.com/thumb_back/fh260/background/20201104/pngtree-technology-background-binary-computer-code-vector-design-image_458702.jpg',
-          previewText: 'hello there'
-        }
-      ]
-    }
-  }
+  asyncData(ctx, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
+          {
+            id: '1',
+            title: 'Tech 1',
+            thumbnail: 'https://png.pngtree.com/thumb_back/fh260/background/20201104/pngtree-technology-background-binary-computer-code-vector-design-image_458702.jpg',
+            previewText: 'hello there'
+          },
+          {
+            id: '2',
+            title: 'Tech 2',
+            thumbnail: 'https://png.pngtree.com/thumb_back/fh260/background/20201104/pngtree-technology-background-binary-computer-code-vector-design-image_458702.jpg',
+            previewText: 'hello there'
+          }
+        ]
+      })
+    }, 1500)
+  },
+  // data() {
+  //   return {
+  //     loadedPosts: [
+  //
+  //     ]
+  //   }
+  // }
 }
 </script>
 

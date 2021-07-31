@@ -4,25 +4,18 @@
       <h1>Get the latest tech news!</h1>
     </section>
     <section class="featured-posts">
-      <PostPreview
-        id="1"
-        thumbnail="https://wallpaperaccess.com/full/314785.jpg"
-        title="Hello there!"
-        previewText="This my first post!" />
-      <PostPreview
-        id="2"
-        thumbnail="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1540505787000/photosp/a8ced7e9-1d01-46c1-b0f8-f716d88074ca/stock-photo-technology-screen-background-computer-data-code-programming-coding-software-a8ced7e9-1d01-46c1-b0f8-f716d88074ca.jpg"
-        title="Hello there - the second time!"
-        previewText="This my second post!" />
+      <post-list/>
     </section>
   </div>
 </template>
 
 <script>
 import PostPreview from '@/components/Posts/PostPreview'
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
+    PostList,
     PostPreview
   }
 }

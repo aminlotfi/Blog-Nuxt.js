@@ -1,6 +1,6 @@
 <template>
   <div class="posts-page">
-
+    <post-list/>
   </div>
 </template>
 
@@ -11,3 +11,9 @@
   align-content: center;
 }
 </style>
+<script>
+import PostList from "@/components/Posts/PostList";
+export default {
+  components: {PostList}
+}
+</script>

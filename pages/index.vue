@@ -4,32 +4,29 @@
       <h1>Get the latest tech news</h1>
     </section>
     <section class="featured-posts">
-      <nuxt-link :to="'/posts/' + 1" class="post-preview">
-        <article>
-          <div class="post-thumbnail" style="background-image: url('https://wallpaper.dog/large/10772231.jpg')"></div>
-          <div class="post-content">
-            <h1>Post title 1</h1>
-            <p>preview text 1</p>
-          </div>
-        </article>
-      </nuxt-link>
-      <nuxt-link :to="'/posts/' + 2" class="post-preview">
-        <article>
-          <div class="post-thumbnail" style="background-image: url('https://wallpaperaccess.com/full/1457926.jpg')"></div>
-          <div class="post-content">
-            <h1>Post title 2</h1>
-            <p>preview text 2</p>
-          </div>
-        </article>
-      </nuxt-link>
-
+      <post-preview
+        id="1"
+        thumbnail="https://wallpaperaccess.com/full/210901.jpg"
+        title="Tech 1"
+        preview-text="Hi, this is  my first post"
+      />
+      <post-preview
+        id="2"
+        thumbnail="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1540505787000/photosp/a8ced7e9-1d01-46c1-b0f8-f716d88074ca/stock-photo-technology-screen-background-computer-data-code-programming-coding-software-a8ced7e9-1d01-46c1-b0f8-f716d88074ca.jpg"
+        title="Tech 2"
+        preview-text="Hi, this is  my second post"
+      />
     </section>
   </div>
 </template>
 
 <script>
-export default {
+  import PostPreview from '@/components/PostPreview.vue';
 
+export default {
+  comments: {
+    PostPreview,
+  }
 }
 </script>
 
@@ -71,41 +68,5 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
 }
 </style>

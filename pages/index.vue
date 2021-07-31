@@ -3,49 +3,28 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <section class="featured-posts">
-      <post-list :posts="loadedPosts"/>
-    </section>
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview'
 import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
-    PostList,
-    PostPreview
+    PostList
   },
-  asyncData(ctx, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPosts: [
-          {
-            id: '1',
-            title: 'Tech 1',
-            thumbnail: 'https://png.pngtree.com/thumb_back/fh260/background/20201104/pngtree-technology-background-binary-computer-code-vector-design-image_458702.jpg',
-            previewText: 'hello there'
-          },
-          {
-            id: '2',
-            title: 'Tech 2',
-            thumbnail: 'https://png.pngtree.com/thumb_back/fh260/background/20201104/pngtree-technology-background-binary-computer-code-vector-design-image_458702.jpg',
-            previewText: 'hello there'
-          }
-        ]
-      })
-    }, 1500)
-  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
+  }
   // data() {
   //   return {
-  //     loadedPosts: [
-  //
-  //     ]
-  //   }
-  // }
-}
+  //     loadedPosts: []
+  //   };
+  // },
+};
 </script>
 
 
@@ -55,7 +34,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url('~assets/images/6.1 main-page-background.jpg');
+  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }

@@ -17,9 +17,12 @@ export default {
   },
   methods: {
     submitForm(postData) {
-      axios.post('https://nuxt-blog-3d4dd-default-rtdb.firebaseio.com/posts.json', postData)
-      .then(result => console.log(result))
-      .catch(e => console.log(e));
+      axios.post('https://nuxt-blog-3d4dd-default-rtdb.firebaseio.com/posts.json', {
+        ...postData,
+        updatedData: new Date()
+      })
+        .then(result => console.log(result))
+        .catch(e => console.log(e));
     }
   }
 };

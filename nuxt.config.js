@@ -61,7 +61,8 @@ module.exports = {
     }
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-3d4dd-default-rtdb.firebaseio.com/'
+    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-3d4dd-default-rtdb.firebaseio.com/',
+    fbAPIKey: 'AIzaSyDAZrt-bPS2kAUUW1UvVe-s2-kpbyOrQR4'
   },
   transition: {
     name: 'fade',

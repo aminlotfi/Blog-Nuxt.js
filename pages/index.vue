@@ -8,8 +8,6 @@
 </template>
 
 <script>
-
-
 export default {
   computed: {
     loadedPosts() {

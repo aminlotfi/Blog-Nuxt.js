@@ -9,45 +9,36 @@
           type="button"
           btn-style="inverted"
           style="margin-left: 10px"
-          @click="isLogin = !isLogin">Switch to {{ isLogin ? 'Signup' : 'Login' }}
-        </AppButton>
+          @click="isLogin = !isLogin">Switch to {{ isLogin ? 'Signup' : 'Login' }}</AppButton>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import AppControlInput from '@/components/UI/AppControlInput'
-import AppButton from '@/components/UI/AppButton'
-import axios from "axios";
-
 export default {
-  name: 'AdminAuthPage',
-  layout: 'admin',
-  components: {
-    AppControlInput,
-    AppButton
-  },
+  name: "AdminAuthPage",
+  layout: "admin",
   data() {
     return {
       isLogin: true,
-      email: '',
-      password: ''
-    }
+      email: "",
+      password: ""
+    };
   },
   methods: {
-
     onSubmit() {
-      this.$store.dispatch('authenticateUser', {
+      this.$store.dispatch("authenticateUser", {
         isLogin: this.isLogin,
         email: this.email,
         password: this.password
-      }).then(() => {
-        this.$router.push('/admin');
       })
+      .then(() => {
+        this.$router.push('/admin');
+      });
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -65,4 +56,3 @@ export default {
   box-sizing: border-box;
 }
 </style>
-
